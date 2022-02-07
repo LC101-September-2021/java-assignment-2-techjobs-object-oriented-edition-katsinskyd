@@ -49,7 +49,17 @@ public class JobTest {
     }
 
     @Test
-    public void testToStringMethod() {
+    public void testBlankLineBeforeAndAfterString() {
+        char[] charArray = job1.toString().toCharArray();
+        int n = charArray.length;
+        String first = String.valueOf(charArray[0]);
+        String last = String.valueOf(charArray[n-1]);
+        assertTrue(first.isBlank());
+        assertTrue(last.isBlank());
+    }
+
+    @Test
+    public void testToStringPrintsLabelsAndValues() {
         assertEquals("\nID: " + job1.getId() +
                 "\nName: Product tester" +
                 "\nEmployer: ACME" +
@@ -70,6 +80,6 @@ public class JobTest {
 
     @Test
     public void testEmptyJobToString() {
-        assertEquals("OOPS! This job does not seem to exist.", job4.toString());
+        assertEquals("\nOOPS! This job does not seem to exist.\n", job4.toString());
     }
 }

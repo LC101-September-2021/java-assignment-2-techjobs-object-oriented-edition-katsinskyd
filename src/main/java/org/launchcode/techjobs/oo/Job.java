@@ -120,7 +120,7 @@ public class Job {
                 this.getLocation().equals("Data not available") &&
                 this.getPositionType().equals("Data not available") &&
                 this.getCoreCompetency().equals("Data not available")) {
-            return "OOPS! This job does not seem to exist.";
+            return "\nOOPS! This job does not seem to exist.\n";
         } else {
             return "\nID: " + this.getId() +
                     "\nName: " + this.getName() +
