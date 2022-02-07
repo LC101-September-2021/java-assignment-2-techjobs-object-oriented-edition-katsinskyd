@@ -49,7 +49,7 @@ public class JobTest {
     }
 
     @Test
-    public void testBlankLineBeforeAndAfterString() {
+    public void testToStringStartsAndEndsWithNewLine() {
         char[] charArray = job1.toString().toCharArray();
         int n = charArray.length;
         String first = String.valueOf(charArray[0]);
@@ -59,7 +59,7 @@ public class JobTest {
     }
 
     @Test
-    public void testToStringPrintsLabelsAndValues() {
+    public void testToStringContainsCorrectLabelsAndData() {
         assertEquals("\nID: " + job1.getId() +
                 "\nName: Product tester" +
                 "\nEmployer: ACME" +
@@ -69,7 +69,7 @@ public class JobTest {
     }
 
     @Test
-    public void testEmptyFieldsToString() {
+    public void testToStringHandlesEmptyField() {
         assertEquals("\nID: " + job3.getId() +
                 "\nName: Product tester" +
                 "\nEmployer: Data not available" +
